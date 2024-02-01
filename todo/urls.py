@@ -16,7 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from myapp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('todos/all/',views.TodoListView.as_view(),name="todo-list"),
+    path('todos/add/',views.TodocreateView.as_view(),name="todo-add"),
+    path('todos/<int:pk>/',views.TodoDetailView.as_view(),name="todo-detail"),
+    path('todos/<int:pk>/remove/',views.TodoDeleteView.as_view(),name="todo-remove"),
+    path('todos/<int:pk>/edit/',views.TodoUpdateView.as_view(),name="todo-update")
 ]
