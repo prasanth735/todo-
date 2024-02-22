@@ -20,9 +20,12 @@ from myapp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('todos/all/',views.TodoListView.as_view(),name="todo-list"),
-    path('todos/add/',views.TodocreateView.as_view(),name="todo-add"),
-    path('todos/<int:pk>/',views.TodoDetailView.as_view(),name="todo-detail"),
-    path('todos/<int:pk>/remove/',views.TodoDeleteView.as_view(),name="todo-remove"),
-    path('todos/<int:pk>/edit/',views.TodoUpdateView.as_view(),name="todo-update")
+    path('todo/all/',views.TodoListView.as_view(),name="todo-list"),
+    path('todo/add/',views.TodocreateView.as_view(),name="todo-add"),
+    path('todo/<int:pk>/',views.TodoDetailView.as_view(),name="todo-detail"),
+    path('todo/<int:pk>/remove/',views.TodoDeleteView.as_view(),name="todo-remove"),
+    path('todo/<int:pk>/edit/',views.TodoUpdateView.as_view(),name="todo-update"),
+    path('signup/',views.SignupView.as_view(),name="signup"),
+    path('',views.SigninView.as_view(),name="signin"),
+    path('signout',views.SignoutView.as_view(),name="signout")
 ]

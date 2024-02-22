@@ -1,17 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <div class="container">
-        <form action="" method="post">
-            {%csrf_token%}
-            {{form.as_p}}
-            <input type="submit">
-        </form>
+{%extends 'base.html'%}
+
+{%block title_block%}
+<title>todo update</title>
+
+{%endblock%}
+
+
+{%block main_block%}
+<div class="container">
+
+    <div class="row">
+      <div class="col-3"></div>
+      <div class="col-6 p-4 shadow mt-5">  
+          <form action="" method="post" class="">
+          {%csrf_token%}
+          {{form.as_p}}
+          <div class="d-flex justify-content-center">
+              <button type="submit" class="btn btn-success">update</button>
+          </div>
+      </form>
+  </div>
+      <div class="col-3"></div>
     </div>
-</body>
-</html>
+  </div>
+
+{%endblock%}
